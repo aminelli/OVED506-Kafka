@@ -30,7 +30,7 @@ kafka-topics --describe --topic test-corso --bootstrap-server broker01:29092
 kafka-console-producer --topic test-corso --bootstrap-server broker01:29092
 ```
 
-## Step 3 - Creazione Consumer
+## Step 4 - Creazione Consumer
 
 ```shell
 docker exec -it broker01 /bin/bash

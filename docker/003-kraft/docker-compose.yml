@@ -1,0 +1,60 @@
+---
+
+services:
+
+  broker01:
+    image: confluentinc/cp-server:7.8.0
+    hostname: broker01
+    container_name: broker01
+    ports:
+      - "9092:9092"
+      - "9101:9101"
+    env_file:
+      - .env.kafka01
+    healthcheck:
+      test: nc -z localhost 9092 || exit 1
+      interval: 30s
+      retries: 10
+
+
+  broker02:
+    image: confluentinc/cp-server:7.8.0
+    hostname: broker02
+    container_name: broker02
+    ports:
+      - "9093:9093"
+      - "9102:9101"
+    env_file:
+      - .env.kafka02
+    healthcheck:
+      test: nc -z localhost 9093 || exit 1
+      interval: 30s
+      retries: 10
+
+  broker03:
+    image: confluentinc/cp-server:7.8.0
+    hostname: broker03
+    container_name: broker03
+    ports:
+      - "9094:9094"
+      - "9103:9101"
+    env_file:
+      - .env.kafka03
+    healthcheck:
+      test: nc -z localhost 9094 || exit 1
+      interval: 30s
+      retries: 10
+
+
+  control-center:
+    image: confluentinc/cp-enterprise-control-center:7.8.0
+    hostname: control-center
+    container_name: control-center
+    ports:
+      - "9021:9021"
+    env_file:
+      - .env.control-center
+    depends_on:
+      - broker01
+      - broker02
+      - broker03
