@@ -24,9 +24,9 @@ docker run -d --hostname kafka-ui --name kafka-ui -p 9088:8080 -e DYNAMIC_CONFIG
 
 ```shell
 docker exec -it broker01 /bin/bash
-cd opt/kafka/bin
-./kafka-topics.sh --create --topic test-corso --bootstrap-server localhost:9092
-./kafka-topics.sh --describe --topic test-corso --bootstrap-server localhost:9092
-./kafka-console-producer.sh --topic test-corso --bootstrap-server localhost:9092
+cd /usr/bin
+kafka-topics --create --topic test-corso --bootstrap-server localhost:9092
+kafka-topics --describe --topic test-corso --bootstrap-server localhost:9092
+kafka-console-producer --topic test-corso --bootstrap-server localhost:9092
 ```
 
