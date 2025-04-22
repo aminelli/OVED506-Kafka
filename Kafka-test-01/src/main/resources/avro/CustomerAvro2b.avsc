@@ -1,0 +1,11 @@
+{
+	"namespace":"com.etlforma.examples.kafka.model",
+	"type":"record",
+	"name":"CustomerAvro",
+	"fields": [
+		{ "name":"id"        , "type":"long"},
+		{ "name":"firstName" , "type":"string"},
+		{ "name":"lastName"  , "type":"string"},
+        { "name":"email"     , "type":"string", "default": ""}
+	]
+}
