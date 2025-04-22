@@ -64,3 +64,10 @@ cd /opt/kafka/
 bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic connect-test --from-beginning 
 ```
 
+#### Avvio di un altro terminale per aggiungere righe al file txt
+
+```shell
+docker exec -it kafka01 /bin/bash
+cd /opt/kafka/
+echo "ciao" >> test.txt
+```
