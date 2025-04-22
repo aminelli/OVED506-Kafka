@@ -17,7 +17,7 @@ public class ProducersExample {
 
         var producer01 = new ProducersExample();
 
-        producer01.sendMessagesFireAndForget("T_FireAndForget", 1000);
+        producer01.sendMessagesFireAndForget("T_FireAndForget", 1000000);
 
 
     }
@@ -66,7 +66,7 @@ public class ProducersExample {
             } catch (Exception ex) {
                 System.out.println("Error Msg -> " + headKey);
 
-            }          
+            }
 
         }
 
