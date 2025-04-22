@@ -25,8 +25,17 @@ docker run -d --hostname kafka-ui --name kafka-ui -p 9088:8080 -e DYNAMIC_CONFIG
 ```shell
 docker exec -it broker01 /bin/bash
 cd /usr/bin
-kafka-topics --create --topic test-corso --bootstrap-server localhost:9092
-kafka-topics --describe --topic test-corso --bootstrap-server localhost:9092
-kafka-console-producer --topic test-corso --bootstrap-server localhost:9092
+kafka-topics --create --topic test-corso --bootstrap-server broker01:29092
+kafka-topics --describe --topic test-corso --bootstrap-server broker01:29092
+kafka-console-producer --topic test-corso --bootstrap-server broker01:29092
 ```
+
+## Step 3 - Creazione Consumer
+
+```shell
+docker exec -it broker01 /bin/bash
+cd /usr/bin
+kafka-console-consumer --topic test-corso --from-beginning --bootstrap-server broker01:29092
+```
+
 
