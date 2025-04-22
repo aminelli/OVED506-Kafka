@@ -30,3 +30,15 @@ docker exec -it kafka01 /bin/bash
 cd opt/kafka/bin
 ./kafka-console-consumer.sh --topic test-corso --from-beginning --bootstrap-server localhost:9092
 ```
+
+
+## NOTA: Come entrare con processo root e isntallare tools (es nano, htop)
+
+```shell
+docker exec -u root -it kafka01 /bin/bash
+apk update
+apk search htop
+apk add htop
+apk add nano
+```
+
