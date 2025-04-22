@@ -53,7 +53,7 @@ services:
     ports:
       - "9021:9021"
     env_file:
-      - .env.control-center
+      - .env.controlcenter
     depends_on:
       - broker01
       - broker02
