@@ -42,3 +42,19 @@ apk add htop
 apk add nano
 ```
 
+## Esercizio - Monitoring di un file txt tramite un kafka connect
+
+### Step 1 - Configurazione e avvio di un kafka connect per monitorare il file txt
+
+#### Configurazione Producer
+
+```shell
+docker exec -it kafka01 /bin/bash
+cd /opt/kafka
+echo "plugin.path=libs/connect-file-3.9.0.jar" >> config/connect-standalone.properties
+echo -e "msg1\nmsg2\nmsg3\nmsg3\nmsg4\nmsg5\nmsg6\nmsg7\nmsg8\nmsg9\nmsg10\nmsg11" > test.txt
+bin/connect-standalone.sh config/connect-standalone.properties config/connect-file-source.properties config/connect-file-sink.properties
+
+```
+
+
